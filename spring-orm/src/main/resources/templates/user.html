@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователь</title>
+    <link rel="stylesheet" href="../css/style.css" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <div class="outer header">
+        <div class="inner item">name</div>
+    </div>
+    <div class="outer header">
+        <div class="inner item" th:text="${user.name}">name</div>
+    </div>
+    <div class="outer header">
+        <div class="inner item">roles</div>
+    </div>
+    <div class="outer" th:each="role: ${user.roles}">
+        <div class="inner item" th:text="${role.name}">role</div>
+    </div>
+    <div class="outer header">
+        <div class="inner item">comments</div>
+    </div>
+    <div class="outer" th:each="comment: ${user.comments}">
+        <div class="inner item" th:text="${comment.text}">comment</div>
+    </div>
+</div>
+</body>
+</html>
