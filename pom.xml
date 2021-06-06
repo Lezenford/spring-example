@@ -6,46 +6,16 @@
     <groupId>ru.gb</groupId>
     <artifactId>spring-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>spring-example</name>
-    <description>Demo project for Spring</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
-    <dependencies>
-        <!--Spring context-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.3.7</version>
-        </dependency>
-        <!--PostConstruct\PreDestroy-->
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
-        </dependency>
-        <!--Provider class for prototype beans-->
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <target>${java.version}</target>
-                    <source>${java.version}</source>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>spring-context</module>
+        <module>spring-mvc</module>
+        <module>spring-orm</module>
+        <module>spring-jpa</module>
+        <module>spring-security</module>
+        <module>spring-aop</module>
+    </modules>
 </project>

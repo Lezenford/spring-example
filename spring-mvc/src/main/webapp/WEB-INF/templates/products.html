@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список продуктов</title>
+    <link rel="stylesheet" href="../../resources/css/style.css" th:href="@{resources/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <div class="outer header">
+        <div class="inner">id</div>
+        <div class="inner item">name</div>
+        <div class="inner item">cost</div>
+    </div>
+    <div class="outer" th:each="product: ${products}">
+        <div class="inner" th:text="${product.id}">id</div>
+        <div class="inner item" th:text="${product.name}">name</div>
+        <div class="inner item" th:text="${product.cost}">cost</div>
+    </div>
+    <div class="form">
+        <form action="#" th:action="@{/product/add}" th:object="${newProduct}" method="post">
+            <input type="text" value="Название" th:field="*{name}"/>
+            <input type="text" value="Цена" th:field="*{cost}"/>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+</div>
+</body>
+</html>
