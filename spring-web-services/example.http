@@ -1,0 +1,16 @@
+### Запрос WSDL схемы
+GET http://localhost:8080/ws/greeting.wsdl
+
+### Пример SOAP запроса
+POST http://localhost:8080/ws
+Content-Type: text/xml;
+
+<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/"
+            xmlns:gre="http://ws.example.spring.lezenford.com/api/greeting">
+    <x:Header/>
+    <x:Body>
+        <gre:getGreetingRequest>
+            <gre:name>John</gre:name>
+        </gre:getGreetingRequest>
+    </x:Body>
+</x:Envelope>

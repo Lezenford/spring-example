@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{_template :: header}"/>
+    <div class="outer header">
+        <div class="inner">id</div>
+        <div class="inner item">name</div>
+        <div class="inner">del</div>
+    </div>
+    <div class="outer" th:each="item: ${items}">
+        <div class="inner" th:text="${item.id}">id</div>
+        <div class="inner item" th:text="${item.name}">name</div>
+        <div class="inner btn">
+            <a th:text="' — '" th:href="@{/delete/{id}(id=${item.id}, user = ${user})}"></a>
+        </div>
+    </div>
+    <div>
+        <a th:if="${itemsCount > items.size()}" th:text="'Не все объекты поместились на странице'"></a>
+    </div>
+    <div class="form">
+        <form action="#" th:action="@{/add(user = ${user})}" th:object="${newItem}" method="post">
+            <input type="text" value="Id" th:field="*{id}"/>
+            <input type="text" value="Имя" th:field="*{name}"/>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+    <th:block th:insert="~{_template :: footer}"/>
+</div>
+</body>
+</html>

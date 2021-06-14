@@ -17,5 +17,8 @@
         <module>spring-jpa</module>
         <module>spring-security</module>
         <module>spring-aop</module>
+        <module>spring-web-services</module>
+        <module>spring-web-socket</module>
+        <module>spring-thymeleaf</module>
     </modules>
 </project>
