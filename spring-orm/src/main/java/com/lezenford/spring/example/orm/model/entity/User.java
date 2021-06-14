@@ -1,5 +1,8 @@
 package com.lezenford.spring.example.orm.model.entity;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,10 +18,12 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @Fetch(FetchMode.JOIN)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<Comment> comments;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @Fetch(FetchMode.SELECT)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "userId"),
