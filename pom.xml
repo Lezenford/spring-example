@@ -20,5 +20,7 @@
         <module>spring-web-services</module>
         <module>spring-web-socket</module>
         <module>spring-thymeleaf</module>
+        <module>spring-rest</module>
+        <module>spring-cloud</module>
     </modules>
 </project>
