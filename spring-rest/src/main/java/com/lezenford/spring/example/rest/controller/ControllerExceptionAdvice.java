@@ -12,12 +12,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * Здесь можно настроить их перехват и обработку
  */
 @ControllerAdvice
+@ResponseBody
 public class ControllerExceptionAdvice {
 
     @ExceptionHandler(IllegalArgumentException.class) //Тип ошибки, который требуется перехватить
     @ResponseStatus(HttpStatus.BAD_REQUEST) //Код ответа
-    @ResponseBody //Аналогично обработке ответа в RestController
     public String illegalArgumentExceptionHandler(IllegalArgumentException e) {
         return e.getMessage();
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String notFoundExceptionHandler(NullPointerException e) {
+        return "Object not found";
     }
 }
