@@ -41,7 +41,7 @@ public class TestController {
         products.add(ProductMapper.MAPPER.toProduct(product));
     }
 
-    @GetMapping
+    @GetMapping("exception")
     public void exception() {
         throw new IllegalArgumentException("test exception");
     }
