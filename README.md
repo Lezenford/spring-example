@@ -36,6 +36,14 @@
 
 Модуль с примером использования REST-контроллеров
 
+### spring-security
+
+Модуль с примерами конфигурации Spring Security
+
+### spring-test
+
+Модуль с примерами интеграционных и юнит тестов
+
 ### spring-aop
 
 Модуль с примером работы Spring-AOP
@@ -74,3 +82,7 @@ spring-cloud-server -> spring-cloud-discovery -> spring-cloud-client -> spring-c
 
 Сервис маршрутизации, использующий discovery-сервис для определения адресов клиентов. В примере конфигурации настроен
 маршрут с адреса http://localhost:8081/client который маршрутизируется на доступный адрес client-service
+
+### spring-integration
+
+Пример модуля с использованием Spring Integration в качестве внутренней шины сообщений
