@@ -15,12 +15,14 @@
         <module>spring-mvc</module>
         <module>spring-orm</module>
         <module>spring-jpa</module>
+        <module>spring-rest</module>
         <module>spring-security</module>
         <module>spring-aop</module>
         <module>spring-web-services</module>
         <module>spring-web-socket</module>
         <module>spring-thymeleaf</module>
-        <module>spring-rest</module>
         <module>spring-cloud</module>
+        <module>spring-test</module>
+        <module>spring-integration</module>
     </modules>
 </project>
